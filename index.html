@@ -1484,6 +1484,30 @@
             </div>
          </div>
       </footer>      <a href="index.html#" class="scrollToTop scroll-bottom style2"><i class="fas fa-arrow-alt-up"></i></a><script src="assets/js/vendor/jquery-3.6.0.min.js"></script><script src="assets/js/app.min.js"></script><script src="assets/js/vscustom-carousel.min.js"></script><script src="assets/js/ajax-mail.js"></script><script src="assets/js/main.js"></script>
+      <script>
+    // JavaScript for the Floating Action Button
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainFab = document.getElementById('main-fab');
+        const widget = document.querySelector('.floating-action-widget');
+
+        mainFab.addEventListener('click', function() {
+            widget.classList.toggle('active');
+        });
+    });
+</script>
+
+   <div class="floating-action-widget">
+    <a href="https://wa.me/919749338868" class="action-button whatsapp" target="_blank" rel="noopener noreferrer" data-tooltip="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+919749338868" class="action-button call" data-tooltip="Call Us">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+    
+    <div class="main-fab" id="main-fab">
+        <i class="fas fa-plus"></i>
+    </div>
+</div>
    </body>
    <!-- Mirrored from html.vecurosoft.com/medixi/demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Jul 2023 05:42:29 GMT -->
 </html>

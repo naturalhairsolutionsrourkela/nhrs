@@ -10050,3 +10050,97 @@ blockquote cite:before{
         padding-bottom:50px
     }
 }
+
+/* --- Floating Action Button CSS --- */
+
+/* Main widget container */
+.floating-action-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column-reverse; /* Stacks items vertically, with the last item at the bottom */
+    align-items: center;
+}
+
+/* Main floating action button (the + icon) */
+.main-fab {
+    width: 60px;
+    height: 60px;
+    background-color: #FFC107; /* A vibrant yellow */
+    color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 24px;
+}
+
+.main-fab:hover {
+    background-color: #ffca2c;
+    transform: scale(1.05);
+}
+
+/* The individual action buttons (WhatsApp, Call) */
+.action-button {
+    width: 50px;
+    height: 50px;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 12px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    
+    /* Initially hidden */
+    transform: scale(0);
+    opacity: 0;
+    position: relative; /* Needed for the tooltip */
+}
+
+/* Make buttons visible when the widget is active */
+.floating-action-widget.active .action-button {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Button specific colors */
+.action-button.whatsapp { background-color: #25D366; }
+.action-button.call { background-color: #34B7F1; }
+
+.action-button.whatsapp:hover { background-color: #1ebe59; }
+.action-button.call:hover { background-color: #2aa3d6; }
+
+/* Icon rotation animation for the main button */
+.floating-action-widget.active .main-fab {
+    transform: rotate(45deg); /* Rotates + to become X */
+}
+
+/* Tooltip styles */
+.action-button::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 65px; /* Position to the left of the button */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    pointer-events: none; /* Allows clicks to pass through */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.action-button:hover::before {
+    opacity: 1;
+}
