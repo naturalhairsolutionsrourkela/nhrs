@@ -10073,7 +10073,7 @@ blockquote cite:before{
         /* Container for the floating buttons */
         .floating-buttons-container-1 {
             position: fixed;
-            bottom: 150px;
+            bottom: 35px;
             right: 37px;
             z-index: 1000;
             display: flex;
