@@ -10147,3 +10147,9 @@ blockquote cite:before{
             line-height: 1.6;
             color: #555;
         }
+ /* Custom styles for the SVG icon within Tailwind */
+        .location-icon-svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
